@@ -20,7 +20,7 @@ const ThemeChanger = ({open, setOpen}) => {
 						</svg>
 					</button>
 				</div>
-				<ul className=' colorChanger-list flex gap-4 w-full overflow-x-auto overflow-y-hidden whitespace-nowrap px-4 pb-7'>
+				<ul className=' colorChanger-list flex gap-4 w-full overflow-x-auto overflow-y-hidden whitespace-nowrap px-4 pb-7 justify-center'>
 					{themeNames.map(item => <ColorOption key={item} item={item}/>)}
 				</ul>
 
