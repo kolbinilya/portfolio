@@ -1,20 +1,42 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import avatar from '../img/photo.jpg';
 import {useGSAP} from "@gsap/react";
 // import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
 import gsap from "gsap";
 
 const NavMenu = ({open, setOpen}) => {
-
-
+	const [openBurger, setOpenBurger] = React.useState(false);
 	// gsap.registerPlugin(ScrollToPlugin)
-	// useGSAP(() => {
-	// 	gsap.to(window, {duration: 2, scrollTo: {y: "#someID", offsetY: 50}});
-	// }, {})
 
+
+	const container = useRef();
+	const {contextSafe} = useGSAP({scope: container})
+	useGSAP(() => {
+		// gsap.to(window, {duration: 2, scrollTo: {y: "#someID", offsetY: 50}});
+	}, {})
+	const onCLickBtn = contextSafe(() => {
+		gsap.to('.burger-btn', {rotate: 180, opacity: 1})
+	})
+	const handleClickBtn = () => {
+		gsap.set('.burger-btn', {rotate: 0, opacity: 1});
+		onCLickBtn()
+		setOpenBurger(!openBurger)
+	}
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setOpenBurger(false); // Закрываем меню при скролле
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	return (
-			<nav className='nav'>
+			<nav className='nav' ref={container}>
 				<div className="container">
 					<div className="nav__inner">
 						<div className='nav__logo'>
@@ -32,23 +54,66 @@ const NavMenu = ({open, setOpen}) => {
 							</svg>
 						</div>
 						<div className='flex gap-4'>
-							<ul className='nav__list'>
-								<li className='nav__item'><a className='nav__link' href="/">home</a></li>
-								<li className='nav__item'><a className='nav__link' href="/">work</a></li>
-								<li className='nav__item'><a className='nav__link' href="/">contact</a></li>
+							<ul className={`nav__list ${openBurger && 'active'}`}>
+								<li className='nav__item'>
+									<a className='nav__link' href="/">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+										</svg>
+										<span>home</span>
+									</a>
+								</li>
+								<li className='nav__item'>
+									<a className='nav__link' href="/">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+										</svg>
+										<span>work</span>
+									</a>
+								</li>
+								<li className='nav__item'>
+									<a className='nav__link' href="/">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+										</svg>
+										<span>about me</span>
+									</a>
+								</li>
+								<li className='nav__item'>
+									<a className='nav__link' href="/">
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
+										</svg>
+										<span>contacts</span>
+									</a>
+								</li>
 							</ul>
 							<button className='rounded-full p-2 button' onClick={() => setOpen(!open)}>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-										 stroke="currentColor" className="w-6 h-6">
-									<path strokeLinecap="round" strokeLinejoin="round"
-												d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42"/>
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="paint"
+										 className='w-6 h-6' fill='currentColor'>
+									<path fill="none" d="M0 0h24v24H0V0z"></path>
+									<path
+											d="M18 4V3c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V6h1v4h-9c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h2c.55 0 1-.45 1-1v-9h7c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1h-2z"></path>
 								</svg>
 							</button>
-							<button className="burger-btn">
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-										 stroke="currentColor" className="w-6 h-6">
-									<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
-								</svg>
+							<button onClick={handleClickBtn}
+											className='burger-btn'>
+								{openBurger ?
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"/>
+										</svg>
+										:
+										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
+												 stroke="currentColor" className="w-6 h-6">
+											<path strokeLinecap="round" strokeLinejoin="round"
+														d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+										</svg>
+								}
 							</button>
 						</div>
 					</div>
