@@ -52,7 +52,6 @@ const MyWork = () => {
 		},
 	];
 	const [currSite, setCurrSite] = React.useState(0)
-	console.log(currSite)
 	return (
 			<section className='work__section'>
 				<div className='container'>
