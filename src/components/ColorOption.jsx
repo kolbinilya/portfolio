@@ -5,10 +5,15 @@ const ColorOption = ({item}) => {
 	const {setTheme, theme, themes} = useTheme()
 	const currentThemeColors = themes[item];
 
+	const themeHandler = () => {
+		localStorage.setItem('theme', item)
+		setTheme(item)
+	}
+
 	return (
 			<li>
 				<button
-						onClick={() => setTheme(item)}
+						onClick={themeHandler}
 						className={`themepicker-btn cursor-pointer ${theme === item && 'active'}`}
 						style={{backgroundColor: currentThemeColors['--color-bg']}}
 				>
