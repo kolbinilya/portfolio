@@ -15,7 +15,7 @@ const App = () => {
 				<NavMenu open={open} setOpen={setOpen}/>
 				<Hero/>
 				<MyWork/>
-				{/*<SkillsTrack/>*/}
+				<SkillsTrack/>
 				<Footer/>
 			</div>
 	);
