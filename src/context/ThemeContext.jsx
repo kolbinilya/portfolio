@@ -87,7 +87,7 @@ const ThemeContext = createContext();
 export const useTheme = () => useContext(ThemeContext);
 
 export const ThemeProvider = ({children}) => {
-	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'theme');
+	const [theme, setTheme] = useState(localStorage.getItem('theme') || 'default');
 
 	useEffect(() => {
 		const root = document.documentElement;
