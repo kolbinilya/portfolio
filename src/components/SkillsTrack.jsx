@@ -7,7 +7,7 @@ const SkillsTrack = () => {
 					<h2 className='section__title'>My Skills</h2>
 				</div>
 
-				<div className='track pt-20'>
+				<div className='track'>
 					<ul className='track__list'>
 						<li className='track__item'>
 							<svg className='w-full h-full' width="800px" height="800px" viewBox="-52.5 0 361 361"

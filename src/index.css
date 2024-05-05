@@ -265,6 +265,12 @@ code {
     margin-bottom: 20px;
 }
 
+.hero__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero__pretitle {
     order: -1;
     font-size: 1.1875rem;
