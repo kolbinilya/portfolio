@@ -92,7 +92,6 @@ export const ThemeProvider = ({children}) => {
 	useEffect(() => {
 		const root = document.documentElement;
 		const selectedTheme = themes[theme];
-		console.log(selectedTheme)
 		for (const [key, value] of Object.entries(selectedTheme)) {
 			root.style.setProperty(key, value);
 		}

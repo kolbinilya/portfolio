@@ -1,34 +1,31 @@
-import React, {useRef} from 'react';
+import React from 'react';
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
 const Social = () => {
 
 	gsap.registerPlugin(useGSAP);
-	const container = useRef();
-
 	useGSAP(() => {
 		gsap.from('.github-link', {
-			y: 300,
+			x: 300,
 			duration: 1,
 			opacity: 0
 		})
 		gsap.from('.insta-link', {
-			y: 300,
+			x: 300,
 			duration: 1,
 			opacity: 0,
 			delay: 0.5
 		})
 		gsap.from('.linkedin-link', {
-			y: 300,
+			x: 300,
 			duration: 1,
 			opacity: 0,
 			delay: 1
 		})
-	}, {scope: container})
+	})
 	return (
-			<ul className='footer__list' ref={container}>
-				{/*<li className='footer__item'>Social media:</li>*/}
+			<ul className='footer__list overflow-hidden'>
 				<li className="footer__item github-link">
 					<a href="https://github.com/kolbinilya" className="footer__link" target='_blank' rel="noreferrer">
 						<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className='w-6 h-6'

@@ -1,8 +1,6 @@
 import React from 'react';
-import {useRef} from "react";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
-// import {TextPlugin} from "gsap/TextPlugin"
 
 import Social from "./Social";
 
@@ -10,35 +8,50 @@ import Social from "./Social";
 const Hero = () => {
 
 	gsap.registerPlugin(useGSAP);
-	// gsap.registerPlugin(TextPlugin)
-	const container = useRef();
-
 	useGSAP(() => {
-		// gsap.to(".hero__title", {rotate: 360});
-		gsap.from(".hero__pretitle", {
-			y: -300,
-			duration: 1,
-			opacity: 0
-		});
-		gsap.from(".hero__title", {
+		gsap.fromTo(".hero__pretitle", {
 			x: -300,
+			opacity: 0
+		}, {
+			x: 0,
 			duration: 1,
-			opacity: 0,
-		});
-		// gsap.to(".hero__title", {
-		// 	duration: 2,
-		// 	text: "I make websites.",
-		// 	ease: "none",
-		// });
-		gsap.from(".hero__text", {
-			duration: 2,
-			opacity: 0,
-			delay: 1
-		});
-	}, {scope: container});
+			opacity: 1,
+			scrollTrigger: {
+				start: "top-=10",
+				toggleActions: "play none none reverse"
+			}
+		})
+		gsap.fromTo(".hero__title", {
+			x: -300,
+			opacity: 0
+		}, {
+			x: 0,
+			duration: 1,
+			opacity: 1,
+			delay: 0.5,
+			scrollTrigger: {
+				start: "top-=10",
+				toggleActions: "play none none reverse"
+			}
+		})
+		gsap.fromTo(".hero__text", {
+			x: -300,
+			opacity: 0
+		}, {
+			x: 0,
+			duration: 1,
+			opacity: 1,
+			delay: 1,
+			scrollTrigger: {
+				start: "top-=10",
+				toggleActions: "play none none reverse"
+			}
+		})
+	}, []);
+
 
 	return (
-			<div className='hero' ref={container}>
+			<div className='hero' id='hero'>
 				<div className='container'>
 					<div className="hero__inner">
 						<h1 className="hero__title">I make websites.</h1>

@@ -1,13 +1,10 @@
 import React, {useEffect, useRef} from 'react';
 import avatar from '../img/photo.jpg';
 import {useGSAP} from "@gsap/react";
-// import {ScrollToPlugin} from 'gsap/ScrollToPlugin'
 import gsap from "gsap";
 
 const NavMenu = ({open, setOpen}) => {
 	const [openBurger, setOpenBurger] = React.useState(false);
-	// gsap.registerPlugin(ScrollToPlugin)
-
 
 	const container = useRef();
 	const {contextSafe} = useGSAP({scope: container})

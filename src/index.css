@@ -36,11 +36,6 @@ body {
     color: var(--color-text);
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -71,7 +66,6 @@ code {
     font-size: .875rem;
     background-color: var(--color-bg-offset);
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
-    /*max-height: 0;*/
     height: 0;
     overflow: hidden;
     position: relative;
@@ -79,7 +73,6 @@ code {
 }
 
 .open {
-    /*max-height: 300px;*/
     height: 162px;
 }
 
@@ -142,11 +135,6 @@ code {
 .themepciker-palette {
     display: block;
     padding: .125em 0;
-}
-
-.colorChanger-list {
-    -webkit-scrollbar-color: var(--color-border);
-
 }
 
 .theme-picker-color {
@@ -269,12 +257,6 @@ code {
     margin-bottom: 20px;
 }
 
-.hero__content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hero__pretitle {
     order: -1;
     font-size: 1.1875rem;
@@ -322,7 +304,7 @@ code {
     max-width: 300px;
     min-height: 350px;
     max-height: 350px;
-    box-shadow: 2px 2px 2px var(--color-border);
+    box-shadow: 2px 2px 2px #333;
     border-radius: 20px;
     background: linear-gradient(85deg, #434343, #262626);
     color: var(--color-bg);
@@ -350,9 +332,6 @@ code {
 
 }
 
-.work__item.active {
-    transform: translateY(-1rem) rotate(3deg);
-}
 
 .work__item.active .work__img {
     opacity: 1;
@@ -472,7 +451,7 @@ code {
     position: relative;
     z-index: 1;
     overflow: hidden;
-    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, .24));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .24);
     min-height: 500px;
 }
 
@@ -738,6 +717,12 @@ code {
 
     .banner__content {
         padding: 0.5rem 1rem;
+    }
+
+    .banner__content-text {
+        max-height: calc(1em * 3); /* Три строки текста */
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .banner__content-title a {

@@ -1,4 +1,7 @@
 import React from 'react';
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import gsap from "gsap";
+
 import Banner from "./Banner";
 import site1 from "../img/sites/site1.png";
 import site2 from "../img/sites/site2.png";
@@ -8,6 +11,8 @@ import site5 from "../img/sites/site5.png";
 import site6 from "../img/sites/site6.png";
 import site6_2 from "../img/sites/site6-2.png";
 import nike3d from '../img/sites/nike3d.png'
+import {useGSAP} from "@gsap/react";
+
 
 const MyWork = () => {
 	const sites = [
@@ -61,15 +66,29 @@ const MyWork = () => {
 		},
 	];
 	const [currSite, setCurrSite] = React.useState(0)
+
+
+	gsap.registerPlugin(ScrollTrigger);
+	useGSAP(() => {
+		gsap.fromTo('.work__list', {opacity: 0, x: 700}, {
+			opacity: 1, x: 0,
+			duration: 1, scrollTrigger: {
+				trigger: '#work__section',
+				start: "top-=20%",
+				toggleActions: "play none none reverse"
+			}
+		})
+	}, [])
+
 	return (
-			<section className='work__section'>
+			<section className='work__section overflow-hidden' id='work__section'>
 				<div className='container'>
 					<h2 className='section__title' id='work'>My work</h2>
 					<Banner site={sites[currSite]}/>
 					<div className="work__list-outer">
 						<ul className='work__list'>
 							{sites.map((site, index) => (
-									<li className={`work__item ${index === currSite && 'active'} `} key={index}
+									<li className={`work__item ${index === currSite ? 'active' : ''} `} key={index}
 											onClick={() => setCurrSite(index)}>
 										<p className='work__item-title max-w-lg'>{site.title}</p>
 										<img className='work__img' src={site.siteImg} alt="current website"/>
