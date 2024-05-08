@@ -64,7 +64,7 @@ const MyWork = () => {
 	return (
 			<section className='work__section'>
 				<div className='container'>
-					<h2 className='section__title'>My work</h2>
+					<h2 className='section__title' id='work'>My work</h2>
 					<Banner site={sites[currSite]}/>
 					<div className="work__list-outer">
 						<ul className='work__list'>
