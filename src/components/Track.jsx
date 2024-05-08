@@ -1,16 +1,15 @@
 import React from 'react';
 
-const SkillsTrack = () => {
+const Track = () => {
 	return (
-			<div className='py-20'>
+			<section className='track-seciton overflow-hidden'>
 				<div className="container">
 					<h2 className='section__title'>My Skills</h2>
 				</div>
-
-				<div className='track'>
-					<ul className='track__list'>
-						<li className='track__item'>
-							<svg className='w-full h-full' width="800px" height="800px" viewBox="-52.5 0 361 361"
+				<div className="slider">
+					<ul className="slide-track">
+						<li className='slide'>
+							<svg className='w-full' viewBox="-52.5 0 361 361"
 									 xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMinYMin meet">
 								<path d="M255.555 70.766l-23.241 260.36-104.47 28.962-104.182-28.922L.445 70.766h255.11z"
@@ -27,7 +26,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>HTML</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="-52.5 0 361 361" version="1.1"
 									 xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
@@ -81,7 +80,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>CSS</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
 								<g>
@@ -102,7 +101,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>JavaScript</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 								<path
 										fill={'#da4648'}
@@ -115,7 +114,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>GULP</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 								<title>file_type_scss2</title>
 								<path d="M16,2A14,14,0,1,1,2,16,14,14,0,0,1,16,2Z" fill={'#c69'}/>
@@ -125,7 +124,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>SCSS</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
 								<rect id="Icons" x="-1088" y="-64" width="1280" height="800" fill={'none'}/>
 								<g id="Icons1">
@@ -326,7 +325,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>React Js</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 -99 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
 								<defs>
@@ -537,7 +536,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>Node Js</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0 10V20H9V22H16V20H32V10H0Z" fill="#CB3837"/>
 								<path
@@ -546,8 +545,8 @@ const SkillsTrack = () => {
 							</svg>
 							<span>NPM</span>
 						</li>
-						<li className='track__item'>
-							<svg className='w-full h-full' width="800px" height="800px" viewBox="-52.5 0 361 361"
+						<li className='slide'>
+							<svg className='w-full' viewBox="-52.5 0 361 361"
 									 xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMinYMin meet">
 								<path d="M255.555 70.766l-23.241 260.36-104.47 28.962-104.182-28.922L.445 70.766h255.11z"
@@ -564,7 +563,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>HTML</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="-52.5 0 361 361" version="1.1"
 									 xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
@@ -618,7 +617,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>CSS</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
 								<g>
@@ -639,7 +638,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>JavaScript</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 								<path
 										fill={'#da4648'}
@@ -652,7 +651,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>GULP</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 								<title>file_type_scss2</title>
 								<path d="M16,2A14,14,0,1,1,2,16,14,14,0,0,1,16,2Z" fill={'#c69'}/>
@@ -662,7 +661,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>SCSS</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className='w-full' viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg">
 								<rect id="Icons" x="-1088" y="-64" width="1280" height="800" fill={'none'}/>
 								<g id="Icons1">
@@ -863,7 +862,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>React Js</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 -99 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg"
 									 preserveAspectRatio="xMidYMid">
 								<defs>
@@ -1074,7 +1073,7 @@ const SkillsTrack = () => {
 							</svg>
 							<span>Node Js</span>
 						</li>
-						<li className='track__item'>
+						<li className='slide'>
 							<svg className={'w-full'} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M0 10V20H9V22H16V20H32V10H0Z" fill="#CB3837"/>
 								<path
@@ -1085,9 +1084,8 @@ const SkillsTrack = () => {
 						</li>
 					</ul>
 				</div>
-
-			</div>
+			</section>
 	);
 };
 
-export default SkillsTrack;
+export default Track;

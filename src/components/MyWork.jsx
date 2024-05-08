@@ -7,6 +7,7 @@ import site4 from "../img/sites/site4.png";
 import site5 from "../img/sites/site5.png";
 import site6 from "../img/sites/site6.png";
 import site6_2 from "../img/sites/site6-2.png";
+import nike3d from '../img/sites/nike3d.png'
 
 const MyWork = () => {
 	const sites = [
@@ -41,6 +42,14 @@ const MyWork = () => {
 			desc: '"Explore our online store for all your boating and outdoor adventure needs. From boat motors to ATVs and everything in between, we\'ve got you covered. Find top-quality products from trusted brands to fuel your next outdoor excursion. Shop now and gear up for unforgettable adventures on land and water!"',
 			tags: ["HTML", "CSS", "JQUERY", "Responsive design"],
 			Url: 'https://scooter-shop-cyan.vercel.app/'
+		},
+		{
+			title: "Nike sneakers",
+			siteImg: nike3d,
+			bannerImg: nike3d,
+			desc: "3d modeling website",
+			tags: ["ThreeJs", "Responsive design"],
+			Url: 'https://nike3d.vercel.app//'
 		},
 		{
 			title: "Web dev Portfolio",
