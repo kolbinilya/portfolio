@@ -71,14 +71,16 @@ code {
     font-size: .875rem;
     background-color: var(--color-bg-offset);
     box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
-    max-height: 0;
+    /*max-height: 0;*/
+    height: 0;
     overflow: hidden;
     position: relative;
     transition: all .8s cubic-bezier(.4, 0, .2, 1);
 }
 
 .open {
-    max-height: 300px;
+    /*max-height: 300px;*/
+    height: 162px;
 }
 
 .button {
@@ -712,6 +714,10 @@ code {
     .nav__link {
         padding-left: 20px;
 
+    }
+
+    .hero__text {
+        font-size: 1.5rem;
     }
 
     .nav__link:hover {

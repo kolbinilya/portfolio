@@ -9,7 +9,7 @@ const ThemeChanger = ({open, setOpen}) => {
 	};
 
 	return (
-			<div className={`colorChanger ${open && 'open'}`}>
+			<div className={`colorChanger ${open ? 'open' : ''}`}>
 				<div className='text-center py-4 relative'>
 					<h3 className='font-semibold'>Select Theme</h3>
 					<button onClick={handleButtonClick}
