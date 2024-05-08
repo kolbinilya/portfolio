@@ -33,7 +33,7 @@ const NavMenu = ({open, setOpen}) => {
 	}, []);
 
 	return (
-			<nav className='nav' ref={container}>
+			<nav className='nav' ref={container} id='home'>
 				<div className="container">
 					<div className="nav__inner">
 						<div className='nav__logo'>
@@ -53,7 +53,7 @@ const NavMenu = ({open, setOpen}) => {
 						<div className='flex gap-4'>
 							<ul className={`nav__list ${openBurger && 'active'}`}>
 								<li className='nav__item'>
-									<a className='nav__link' href="/">
+									<a className='nav__link' href="#home">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
 												 stroke="currentColor" className="w-6 h-6">
 											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
@@ -71,21 +71,12 @@ const NavMenu = ({open, setOpen}) => {
 									</a>
 								</li>
 								<li className='nav__item'>
-									<a className='nav__link' href="/">
+									<a className='nav__link' href="#skills">
 										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
 												 stroke="currentColor" className="w-6 h-6">
 											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
 										</svg>
-										<span>about me</span>
-									</a>
-								</li>
-								<li className='nav__item'>
-									<a className='nav__link' href="/">
-										<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
-												 stroke="currentColor" className="w-6 h-6">
-											<path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/>
-										</svg>
-										<span>contacts</span>
+										<span>skills</span>
 									</a>
 								</li>
 							</ul>

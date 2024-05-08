@@ -27,7 +27,7 @@ const Social = () => {
 		})
 	}, {scope: container})
 	return (
-			<ul className='footer__list' ref={container}>
+			<ul className='footer__list overflow-hidden' ref={container}>
 				<li className="footer__item github-link">
 					<a href="https://github.com/kolbinilya" className="footer__link" target='_blank' rel="noreferrer">
 						<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className='w-6 h-6'

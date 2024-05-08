@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
@@ -8,6 +8,7 @@ import Social from "./Social";
 const Hero = () => {
 
 	gsap.registerPlugin(useGSAP);
+	const container = useRef(null)
 	useGSAP(() => {
 		gsap.fromTo(".hero__pretitle", {
 			x: -300,
@@ -47,11 +48,11 @@ const Hero = () => {
 				toggleActions: "play none none reverse"
 			}
 		})
-	}, []);
+	}, {scope: container});
 
 
 	return (
-			<div className='hero' id='hero'>
+			<div className='hero overflow-hidden' id='hero' ref={container}>
 				<div className='container'>
 					<div className="hero__inner">
 						<h1 className="hero__title">I make websites.</h1>

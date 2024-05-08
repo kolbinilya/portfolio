@@ -2,7 +2,7 @@ import React from 'react';
 
 const Track = () => {
 	return (
-			<section className='track-seciton overflow-hidden'>
+			<section className='track-seciton overflow-hidden' id='skills'>
 				<div className="container">
 					<h2 className='section__title'>My Skills</h2>
 				</div>
