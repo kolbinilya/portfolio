@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
 
 const Social = () => {
 
 	gsap.registerPlugin(useGSAP);
+	const container = useRef();
+
 	useGSAP(() => {
 		gsap.from('.github-link', {
 			x: 300,
@@ -23,9 +25,9 @@ const Social = () => {
 			opacity: 0,
 			delay: 1
 		})
-	})
+	}, {scope: container})
 	return (
-			<ul className='footer__list overflow-hidden'>
+			<ul className='footer__list' ref={container}>
 				<li className="footer__item github-link">
 					<a href="https://github.com/kolbinilya" className="footer__link" target='_blank' rel="noreferrer">
 						<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className='w-6 h-6'
