@@ -1,5 +1,5 @@
-import React from 'react';
-import {ScrollTrigger} from 'gsap/ScrollTrigger';
+import React from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 
 import Banner from "./Banner";
@@ -10,35 +10,43 @@ import site4 from "../img/sites/site4.png";
 import site5 from "../img/sites/site5.png";
 import site6 from "../img/sites/site6.png";
 import site6_2 from "../img/sites/site6-2.png";
-import nike3d from '../img/sites/nike3d.png'
-import {useGSAP} from "@gsap/react";
-
+import site7 from "../img/sites/future-tech.png";
+import nike3d from "../img/sites/nike3d.png";
+import { useGSAP } from "@gsap/react";
 
 const MyWork = () => {
 	const sites = [
 		{
+			title: "Future tech",
+			siteImg: site7,
+			bannerImg: site7,
+			desc: " ...\n",
+			tags: ["HTML", "SCSS", "JS", "Responsive design", "JS modules", "API"],
+			Url: "https://future-tech-lime.vercel.app/index.html",
+		},
+		{
 			title: "Utverdil engineer portal",
 			siteImg: site5,
 			bannerImg: site5,
-			desc: 'Developer of an online business portal designed for engineers. The company\'s portal provides ready-made drawings, projects, 3D-models and allows users to place ...\n',
+			desc: "Developer of an online business portal designed for engineers. The company's portal provides ready-made drawings, projects, 3D-models and allows users to place ...\n",
 			tags: ["HTML", "CSS", "JS", "Responsive design"],
-			Url: 'https://engineer-portal.vercel.app/'
+			Url: "https://engineer-portal.vercel.app/",
 		},
 		{
 			title: "Agency in a box",
 			siteImg: site4,
 			bannerImg: site4,
-			desc: 'Get content ideas, generate captions that respects brand’s tone of voice, design and plan your publications all in one place',
+			desc: "Get content ideas, generate captions that respects brand’s tone of voice, design and plan your publications all in one place",
 			tags: ["HTML5", "SCSS", "JS", "Responsive design"],
-			Url: 'https://agency-in-a-box.vercel.app/'
+			Url: "https://agency-in-a-box.vercel.app/",
 		},
 		{
 			title: "ROBO SCHOOL",
 			siteImg: site6,
 			bannerImg: site6_2,
-			desc: 'Robo School – institution for the formation of a personnel pedagogical reserve in the field robotics programming',
+			desc: "Robo School – institution for the formation of a personnel pedagogical reserve in the field robotics programming",
 			tags: ["HTML", "SCSS", "JS", "Responsive design"],
-			Url: 'https://robo-school-two.vercel.app/'
+			Url: "https://robo-school-two.vercel.app/",
 		},
 		{
 			title: "Scooter Shop",
@@ -46,7 +54,7 @@ const MyWork = () => {
 			bannerImg: site3,
 			desc: '"Explore our online store for all your boating and outdoor adventure needs. From boat motors to ATVs and everything in between, we\'ve got you covered. Find top-quality products from trusted brands to fuel your next outdoor excursion. Shop now and gear up for unforgettable adventures on land and water!"',
 			tags: ["HTML", "CSS", "JQUERY", "Responsive design"],
-			Url: 'https://scooter-shop-cyan.vercel.app/'
+			Url: "https://scooter-shop-cyan.vercel.app/",
 		},
 		{
 			title: "Nike sneakers",
@@ -54,50 +62,64 @@ const MyWork = () => {
 			bannerImg: nike3d,
 			desc: "3d modeling website",
 			tags: ["ThreeJs", "Responsive design"],
-			Url: 'https://nike3d.vercel.app//'
+			Url: "https://nike3d.vercel.app//",
 		},
 		{
 			title: "Web dev Portfolio",
 			siteImg: site1,
 			bannerImg: site1,
-			desc: '',
+			desc: "",
 			tags: ["ReactJS", "Responsive design"],
-			Url: 'https://react-portfolio-blue-cyan.vercel.app/'
+			Url: "https://react-portfolio-blue-cyan.vercel.app/",
 		},
 	];
-	const [currSite, setCurrSite] = React.useState(0)
-
+	const [currSite, setCurrSite] = React.useState(0);
 
 	gsap.registerPlugin(ScrollTrigger);
 	useGSAP(() => {
-		gsap.fromTo('.work__list', {opacity: 0, x: 700}, {
-			opacity: 1, x: 0,
-			duration: 1, scrollTrigger: {
-				trigger: '#work__section',
-				start: "top-=20%",
-				toggleActions: "play none none reverse"
+		gsap.fromTo(
+			".work__list",
+			{ opacity: 0, x: 700 },
+			{
+				opacity: 1,
+				x: 0,
+				duration: 1,
+				scrollTrigger: {
+					trigger: "#work__section",
+					start: "top-=20%",
+					toggleActions: "play none none reverse",
+				},
 			}
-		})
-	}, [])
+		);
+	}, []);
 
 	return (
-			<section className='work__section overflow-hidden' id='work__section'>
-				<div className='container'>
-					<h2 className='section__title' id='work'>My work</h2>
-					<Banner site={sites[currSite]}/>
-					<div className="work__list-outer">
-						<ul className='work__list'>
-							{sites.map((site, index) => (
-									<li className={`work__item ${index === currSite ? 'active' : ''} `} key={index}
-											onClick={() => setCurrSite(index)}>
-										<p className='work__item-title max-w-lg'>{site.title}</p>
-										<img className='work__img' src={site.siteImg} alt="current website"/>
-									</li>
-							))}
-						</ul>
-					</div>
+		<section className="work__section overflow-hidden" id="work__section">
+			<div className="container">
+				<h2 className="section__title" id="work">
+					My work
+				</h2>
+				<Banner site={sites[currSite]} />
+				<div className="work__list-outer">
+					<ul className="work__list">
+						{sites.map((site, index) => (
+							<li
+								className={`work__item ${index === currSite ? "active" : ""} `}
+								key={index}
+								onClick={() => setCurrSite(index)}
+							>
+								<p className="work__item-title max-w-lg">{site.title}</p>
+								<img
+									className="work__img"
+									src={site.siteImg}
+									alt="current website"
+								/>
+							</li>
+						))}
+					</ul>
 				</div>
-			</section>
+			</div>
+		</section>
 	);
 };
 
