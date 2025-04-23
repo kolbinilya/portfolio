@@ -778,6 +778,11 @@ body {
 	max-width: 100%;
 	height: auto;
 	object-fit: cover;
+	cursor: pointer;
+	transition-duration: 0.3s;
+}
+.certificates__image:hover {
+	scale: 1.05;
 }
 .certificates__list {
 	display: flex;
